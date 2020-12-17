@@ -1,0 +1,51 @@
+<!-- {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
+
+<title>Blog</title>
+</head>
+<body>
+<h1 class="text-center">Hello!</h1>
+<form method="POST" class="text-center">
+{% csrf_token %}
+<input type="submit" value="Football" name="tag" class="filter btn btn-success"/>
+<input type="submit" value="Nature" name="tag" class="filter btn btn-danger"/>
+<a class="btn btn-warning" href="{% url 'blog_home' %}">Reset</a>
+</form>
+<!-- <input type="submit" value="Search"/> -->
+
+   <div class="row">
+    {% for post in data %}
+        <div class="col-12 col-md-4">
+        <div class="card h-100 border-0 m-5" id="blog" style="width: 300px;">
+        <img class="card-img-top img-fluid" src="{{ post.image }}" alt="Card image cap">
+        <div class="card-body">
+        <h4>{{ post.author }}</h4>
+        <h5 class="card-title post-title">{{ post.title }}</h5>
+        <p class="card-text">{{ post.content }}</p>
+        <p><small class="post-tag">{{ post.tag }}</small><p>
+        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        </div>
+        </div>
+        </div>
+    {% endfor %}
+    </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    // $(".clear-btn").click(function() {
+    //     $(".filter").val('Football'); // <-- note val() here
+    // });
+</script>
+</body>
+</html> -->
