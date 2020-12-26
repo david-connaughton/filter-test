@@ -15,7 +15,60 @@
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
+        <div class="col-md-12 m-5 p-5">
+        <!--Accordion wrapper-->
+        <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+
+            <!-- Accordion card -->
+            <div class="card">
+
+                <!-- Card header -->
+                <div class="card-header" role="tab" id="headingThree3">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree3" aria-expanded="false" aria-controls="collapseThree3">
+                        <h3 class="mb-0 text-center">
+                            Members-Only pages <i class="fas fa-angle-down rotate-icon"></i>
+                        </h3>
+                    </a>
+                </div>
+
+                <!-- Card body -->
+                {% for item in cart_items %}
+                <div id="collapseThree3" class="collapse" role="tabpanel" aria-labelledby="headingThree3" data-parent="#accordionEx">
+                    
+                    <div class="card-body">
+                        <div class="row">
+                                            <div class="card m-5 mx-auto text-center card-outline">
+                    <img class="card-img-top" src="{{ item.product.image.url }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ item.product.title }}</h5>
+                        <p>
+                            <small class="small">Quantity</small>
+                        </p>
+                        <p class="card-text">{{ item.quantity }} @ €{{ item.photo.price }} per item</p>
+                        <p>
+                            <small class="small">Edit Quantity</small>
+                        </p>
+                        <br>
+                        <p>
+                            <small class="small">Total</small>
+                        </p>
+                        <p class="card-text">€{{ item.product.price | calc_subtotal:item.quantity }}</p>
+                    </div>
+                </div>
+                            <!-- Card -->
+                        </div>
+                    </div>
+                    
+                </div>
+                {% endfor %}
+            </div>
+            <!-- Accordion card -->
+
+        </div>
+        <!-- Accordion wrapper -->
+
+    </div>
+    <!-- <div class="overlay"></div>
     <div class="container">
         <div class="row">
             <div class="col">
@@ -135,7 +188,7 @@
         </div>
     </div>
     <br>
-    <br>
+    <br> -->
 {% endblock %}
 
 {% block postloadjs %}

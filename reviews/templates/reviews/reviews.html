@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'reviews/css/reviews.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h1 class="text-center mt-5 p-5">Reviews</h1>
+    <a href="{% url 'review-create' %}" class="btn btn-outline-danger">Add Review</a>
+    {% for review in reviews %}
+    <p>
+        {{ review.title }}
+    </p>
+    <p>
+        {{ review.user }}
+    </p>
+    <p id= "review-rating">
+        {{ review.rating }}
+    </p>
+
+    <p class="text-muted">
+        {{ review.date_posted }}
+    </p>
+    {% endfor %}
+{% endblock %}
+
+{% block postloadjs %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#review.rating').append(`<h5>Hello</h5>`);
+        })
+        
+        
+        var rating = $('#review-rating');
+        ratingVal = rating.val();
+        if(ratingVal == 3){
+            console.log("Three");
+        }else{
+            console.log("david")
+        }
+        console.log(ratingVal);
+    </script>
+{% endblock %}

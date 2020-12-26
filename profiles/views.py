@@ -5,6 +5,7 @@ from .forms import UserProfileForm
 
 from checkout.models import Order
 from products.models import Product
+from reviews.models import Review
 
 
 def profile(request):
@@ -18,10 +19,11 @@ def profile(request):
     form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
     template = 'profiles/profile.html'
-
+    reviews = Review.objects.filter(user=request.user)
     context = {
         'form': form,
         'orders': orders,
+        'reviews': reviews,
         'on_profile_page': True
     }
 

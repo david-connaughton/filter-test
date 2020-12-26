@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-{% load bag_tools %}
+<!-- {% load bag_tools %} -->
 
 {% block page_header %}
     <div class="container header-container">
@@ -11,6 +11,64 @@
 {% endblock %}
 
 {% block content %}
+
+        <div class="col-md-12">
+        <!--Accordion wrapper-->
+        <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+
+            <!-- Accordion card -->
+            <div class="card">
+
+                <!-- Card header -->
+                <div class="card-header" role="tab" id="headingThree3">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree3" aria-expanded="false" aria-controls="collapseThree3">
+                        <h3 class="mb-0 text-center">
+                            Members-Only pages <i class="fas fa-angle-down rotate-icon"></i>
+                        </h3>
+                    </a>
+                </div>
+
+                <!-- Card body -->
+                <div id="collapseThree3" class="collapse" role="tabpanel" aria-labelledby="headingThree3" data-parent="#accordionEx">
+                    {% for item in cart_items %}
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="card col-md-4 mb-2">
+                                <!-- Card image -->
+                                <div class="view overlay">
+                                    <img class="card-img-top" src="../../../resources/201/mainpics/thumbs300/liverpool-albert-dock-293.jpg" alt="">
+                                </div>
+                                <!-- Card content -->
+                                <div class="card-body blue lighten-5">
+                                    <!-- Title -->
+                                    <h4 class="card-title purple-text">4th page, just to test</h4>
+                                    <!-- Text -->
+                                    <p class="card-text">Just to test how the display looks on the new members home page. The main picture doesn't have adescription, so the page will fail W3C
+                                        validation -
+                                        a well as missing out on search engine opportunities.</p>
+                                    <!-- Link -->
+                                    <a href="../../../websites-for-trf/4378/fourth-test.html" class="btn btn-primary btn-sm float-right"><i class="fas fa-angle-double-right"></i></a>
+                                </div>
+                            </div>
+                            <!-- Card -->
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+            <!-- Accordion card -->
+
+        </div>
+        <!-- Accordion wrapper -->
+
+    </div>
+
+
+
+
+
+
     <div class="overlay"></div>
     <div class="container mb-2">
         <div class="row">
